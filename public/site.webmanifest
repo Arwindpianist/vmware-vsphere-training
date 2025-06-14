@@ -1,0 +1,61 @@
+{
+  "name": "VMware vSphere Training",
+  "short_name": "vSphere Training",
+  "description": "A comprehensive training program for VMware vSphere, covering virtualization concepts, ESXi, vCenter Server, networking, storage, and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0f172a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "training", "technology"],
+  "screenshots": [
+    {
+      "src": "/screenshots/home.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Home page of VMware vSphere Training"
+    },
+    {
+      "src": "/screenshots/module.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide",
+      "label": "Module page of VMware vSphere Training"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Course Modules",
+      "short_name": "Modules",
+      "description": "View all course modules",
+      "url": "/",
+      "icons": [{ "src": "/icons/modules.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Prerequisites",
+      "short_name": "Requirements",
+      "description": "View course prerequisites",
+      "url": "/prerequisites",
+      "icons": [{ "src": "/icons/prerequisites.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "lang": "en-US",
+  "dir": "ltr"
+} 

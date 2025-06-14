@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+    
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+    
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+    
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+    
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --ring: 216 34% 17%;
+    
+    --radius: 0.5rem;
+
+    /* VMware brand colors */
+    --vmware-blue: 201 92% 48%;
+    --vmware-orange: 35 100% 51%;
+    --vmware-dark-blue: 201 94% 35%;
+    --vmware-dark-orange: 35 94% 43%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .module-card {
+    @apply rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+
+  .day-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .day-badge.day1 {
+    @apply bg-[#068bef]/10 text-[#068bef];
+  }
+
+  .day-badge.day2 {
+    @apply bg-[#ff8b02]/10 text-[#ff8b02];
+  }
+
+  .day-badge.day3 {
+    @apply bg-[#057eaf]/10 text-[#057eaf];
+  }
+
+  .day-badge.day4 {
+    @apply bg-[#d77d06]/10 text-[#d77d06];
+  }
+
+  .topic-card {
+    @apply rounded-lg border border-border bg-card p-4 shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-x-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-200 hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .nav-link.active {
+    @apply bg-accent text-accent-foreground;
+  }
+
+  .prerequisites-card {
+    @apply rounded-lg border border-border bg-card p-6 shadow-sm;
+  }
+
+  .prerequisites-card h3 {
+    @apply text-lg font-semibold text-[#068bef];
+  }
+
+  .prerequisites-card ul {
+    @apply mt-4 space-y-2;
+  }
+
+  .prerequisites-card li {
+    @apply flex items-start gap-x-2 text-muted-foreground;
+  }
+
+  .prerequisites-card li::before {
+    @apply mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#ff8b02];
+    content: "";
+  }
+
+  .tip-box {
+    @apply rounded-lg border border-[#ff8b02]/20 bg-[#ff8b02]/5 p-4;
+  }
+
+  .tip-box h4 {
+    @apply text-sm font-semibold text-[#ff8b02];
+  }
+
+  .tip-box p {
+    @apply mt-2 text-sm text-muted-foreground;
+  }
+
+  .code-block {
+    @apply rounded-lg border border-border bg-[#1a1a1a] p-4 font-mono text-sm text-gray-300;
+  }
+
+  .step-list {
+    @apply space-y-6;
+  }
+
+  .step-item {
+    @apply relative pl-8;
+  }
+
+  .step-item::before {
+    @apply absolute left-0 top-0 h-full w-px bg-border;
+    content: "";
+  }
+
+  .step-item::after {
+    @apply absolute left-0 top-0 flex h-6 w-6 items-center justify-center rounded-full border border-border bg-card text-sm font-medium text-muted-foreground;
+    content: attr(data-step);
+  }
+
+  .step-item:last-child::before {
+    @apply h-6;
+  }
+
+  .step-content {
+    @apply rounded-lg border border-border bg-card p-4;
+  }
+
+  .step-content h4 {
+    @apply text-base font-semibold text-[#068bef];
+  }
+
+  .step-content p {
+    @apply mt-2 text-sm text-muted-foreground;
+  }
+} 

@@ -1,0 +1,15 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://vsphere.arwindpianist.store/sitemap.xml
+
+# Disallow crawling of API routes
+Disallow: /api/
+
+# Disallow crawling of admin routes
+Disallow: /admin/
+
+# Crawl-delay for all bots
+Crawl-delay: 10 
